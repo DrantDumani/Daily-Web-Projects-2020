@@ -1,5 +1,5 @@
 html {
-	background: url("assets/band_bg.jpg") no-repeat center center fixed;
+	background: url("https://raw.githubusercontent.com/DrantDumani/Daily-Web-Projects-2020/master/Day2_Survery_Form/assets/band_bg.jpg") no-repeat center center fixed;
 	font-family: 'Montserrat', sans-serif;
 	font-size: 1.2em;
 	color: #fff;
@@ -16,6 +16,12 @@ body {
 	padding: 2.5% 5%;
 }
 
+@media (min-width: 1200px) {
+	#title, #description {
+		padding: 0.75% 5%;
+	}
+}
+
 #title {
 	padding-top: 1.8em;
 }
@@ -29,8 +35,19 @@ body {
 	padding-top: 2.5em;
 }
 
+@media (min-width: 1200px) {
+	.first {
+		padding-top: 0.75em;
+	}
+}
+
 label, span {
 	padding-bottom: 0.4em;
+}
+
+div > label, div > span {
+	font-weight: bold;
+	font-size: 1.2rem;
 }
 
 #survey-form {
@@ -41,7 +58,7 @@ label, span {
 @media (min-width: 1200px) {
 	#survey-form {
 		margin: 0 auto;
-		width: 60%;
+		width: 50%;
 	}
 }
 
@@ -63,13 +80,11 @@ label, span {
 	padding: 4.5% 5%;
 }
 
-/*@media (min-width: 1200px) {
+@media (min-width: 1200px) {
 	.survey-item {
-		flex-direction: row;
-		justify-content: start;
-		flex: 1 0 200px;
+		padding: 2.5% 3%;
 	}
-}*/
+}
 
 #textbox {
 	height: 9em;
@@ -78,12 +93,19 @@ label, span {
 
 #submit {
 	margin: 4.5% 5% 15% 5%;
-	padding: 3.5% 0;
+	/*padding: 3.5% 0;*/
+	height: 1.4em;
 	color: #fff;
 	background-color: #00bbbe;
 	border: none;
 	border-radius: 1.5%;
-	font-size: 2em;
+	font-size: 1.4em;
+}
+
+@media (min-width: 1200px) {
+	#submit {
+		margin: 4.5% 3% 15% 3%;
+	}
 }
 
 #submit:hover {
