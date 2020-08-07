@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Music Survey Form</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> 
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<h1 id="title">Music Survey</h1>
+	<p id="description">Tell us about your taste in music</p>
+	<form id="survey-form" action="">
+		<div class="survey-item">
+			<label class="first" for="name" id="name-label">Name:<abbr title="required">*</abbr></label>
+			<input id="name" type="text" name="name" placeholder="Enter your name" required>
+		</div>
+		
+		<div class="survey-item">
+			<label for="email" id="email-label">Email:<abbr title="required">*</abbr></label>
+			<input id="email" type="email" name="email" placeholder="Enter your email" required>
+		</div>
+
+		<div class="survey-item">
+			<label for="number" id="number-label">Age<abbr title="required">*</abbr></label>
+			<input id="number" type="number" name="" min="5" max="100" placeholder="Enter your age" required>
+		</div>
+
+		<div class="survey-item">
+			<span>What is your all time favorite genre of music?</span>
+			<select id=dropdown>
+				<option value="" hidden selected disabled>Please select a genre</option>
+				<option value="jazz">Jazz</option>
+				<option value="rock">Rock</option>
+				<option value="metal">Metal</option>
+				<option value="blues">Blues</option>
+				<option value="pop">Pop</option>
+				<option value="hip-hop">Hip hop</option>
+				<option value="classical">Classical</option>
+				<option value="reggae">Reggae</option>
+			</select>
+		</div>
+
+		<div class="survey-item">
+			<span>How often do you listen to music?</span>
+			<ul class="radio-chmrk">
+				<li>
+					<input type="radio" value="daily" id="daily" name="frequency" checked>
+					<label for="daily">Daily</label>
+				</li>
+				<li>
+					<input type="radio" value="moderate" id="moderate" name="frequency">
+					<label for="moderate">Moderately</label>
+				</li>
+				<li>
+					<input type="radio" value="rarely" id="rarely" name="frequency">
+					<label for="rarely">Rarely</label>
+				</li>
+			</ul>
+		</div>
+
+		<div class="survey-item">
+			<span>What genres do you like?</span>
+			<ul class="radio-chmrk">
+				<li>
+					<input type="checkbox" value="jazz" id="jazz" name="genre">
+					<label for="jazz">Jazz</label>
+				</li>
+
+				<li>
+					<input type="checkbox" value="rock" id="rock" name="genre">
+					<label for="rock">Rock</label>
+				</li>
+
+				<li>
+					<input type="checkbox" value="metal" id="metal" name="genre">
+					<label for="metal">Metal</label>
+				</li>
+				<li>
+					<input type="checkbox" value="blues" id="blues" name="genre">
+					<label for="blues">Blues</label>
+				</li>
+				<li>
+					<input type="checkbox" value="pop" id="pop" name="genre">
+					<label for="pop">Pop</label>
+				</li>
+				<li>
+					<input type="checkbox" value="hip-hop" id="hip-hop" name="genre">
+					<label for="hip-hop">Hip Hop</label>
+				</li>
+				<li>
+					<input type="checkbox" value="classical" id="classical" name="genre">
+					<label for="classical">Classical</label>
+				</li>
+				<li>
+					<input type="checkbox" value="reggae" id="reggae" name="genre">
+					<label for="reggae">Reggae</label>
+				</li>
+			</ul>
+		</div>
+
+		<div class="survey-item">
+			<span>Tell us your thoughts on your favorite genre. Or your favorite piece of music!</span>
+			<textarea id="textbox" placeholder="Enter your thoughts in 500 characters or less" maxlength="500">
+			</textarea>
+		</div>
+		<button id="submit" type="submit">Submit</button>
+	</form>
+</body>
+</html>
