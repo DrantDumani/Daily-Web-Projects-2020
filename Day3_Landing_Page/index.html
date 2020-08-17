@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Sheikah Guardians</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-wdith, initial-scale=1, shrink-to-fit=no">
+	<!-- Insert font here -->
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<header id="header">
+		<input type="checkbox" id="menu">
+	    <label id="hamburger-group" for="menu">
+	      <span class="hamburger-menu"></span>
+	      <span class="hamburger-menu"></span>
+	      <span class="hamburger-menu"></span>
+	    </label>
+	    <div id="img-container">
+			<img id="header-img" src="assets/Company_logo_Sheikah_symbol.png" alt="Sheikah logo">
+		</div>
+		<nav id="nav-bar">
+			<ul class="nav-menu">
+				<li><a href="#info" class="nav-link"><p class="nav-text">Product Info</p></a></li>
+				<li><a href="#" class="nav-link"><p class="nav-text">Demonstration</p></a></li>
+				<li><a href="#" class="nav-link"><p class="nav-text">Pricing</p></a></li>
+			</ul>
+		</nav>
+	</header>
+	<main id="main">
+		<section id="info">
+			
+		</section>
+		<section id="demonstration">
+			<!-- Place properties in CSS later Frameborder is obselete in html -->
+			<iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/UWKXwSZcQlo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			<!-- <video controls width="100%">
+				<source src="https://www.youtube.com/watch?v=UWKXwSZcQlo" type="video/mp4">
+			</video> -->
+			<!-- Above does not work in firefox -->
+		</section>
+		<section id="pricing">
+		</section>
+	</main>
+	<form id="form" action="https://www.freecodecamp.com/email-submit">
+		<label for="email">Email: </label>
+		<input id="email" type="email" name="email" placeholder="GDragmire@Gerudo.com" required>
+		<input id="submit" type="submit" value="Register!">
+	</form>
+</body>
+</html>
