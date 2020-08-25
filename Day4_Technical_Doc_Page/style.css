@@ -1,0 +1,61 @@
+body {
+  margin: 0;
+  background-color: yellow;
+}
+
+[type="checkbox"]:checked ~ nav #nav-menu {
+  left: 0;
+}
+
+[type="checkbox"]:checked ~ #main-doc, 
+[type="checkbox"]:checked ~ nav header {
+  left: 41vw;
+}
+
+#doc-topic {
+	margin-top: 20px;
+}
+
+#nav-menu {
+  background-color: cyan;
+  position: absolute;
+  padding: 0;
+  width: 40vw;
+  height: 100vh;
+  left: -41vw;
+  border-right: 3px solid black;
+}
+
+#main-doc, header {
+  width: 100vw;
+  position: relative;
+}
+
+#hamburger-group {
+	position: absolute;
+	top: 15px;
+	left: 8px;
+	cursor: pointer;
+}
+
+.hamburger-menu {
+  display: block;
+  margin: 5px;
+  border-radius: 4px;
+  background-color: #04c4d4;
+  width: 35px;
+  height: 5px;
+  transition: transform 0.3s ease-out, opacity 0.5s ease-out;
+}
+
+[type="checkbox"]:checked ~ nav #hamburger-group > .hamburger-menu:nth-child(1) {
+  transform: rotate(45deg) translate(2px, 12px);
+}
+
+[type="checkbox"]:checked ~ nav #hamburger-group > .hamburger-menu:nth-child(2) {
+  opacity: 0;
+}
+
+[type="checkbox"]:checked ~ nav #hamburger-group > .hamburger-menu:nth-child(3) {
+  transform: rotate(-45deg) translate(2px, -12px);
+}
