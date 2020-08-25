@@ -93,7 +93,8 @@ body {
 }
 
 .nav-menu {
-	font-size: 1.4em;
+	/*font-size: 1.4em;*/
+	font-size: 200%;
 	font-weight: bolder;
 	margin-top: 1px;
 	padding: 0;
