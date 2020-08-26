@@ -16,12 +16,11 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 60%;
   border-bottom: 3px solid red;
 }
 
-.mobile-menu > * {
-  margin: 8px;
+.mobile-menu > *, #main-doc > * {
+  margin: 13px;
 }
 
 #menu:checked ~ nav #nav-menu {
@@ -55,7 +54,7 @@ body {
 }
 
 #nav-menu {
-  /*background-color: cyan;*/
+  margin: 0;
   position: absolute;
   padding: 0;
   width: 40vw;
@@ -64,15 +63,16 @@ body {
   border-right: 3px solid black;
 }
 
+#nav-menu > * {
+  padding: 8px;
+}
+
 #main-doc {
-  /*margin-top: 55px;*/
-  /*padding-left: 13px;*/
   width: 100%;
   position: relative;
 }
 
 #hamburger-group {
-	/*position: absolute;*/
 	top: 15px;
 	left: 8px;
 	cursor: pointer;
@@ -89,7 +89,7 @@ body {
 
 .hamburger-menu {
   display: block;
-  margin: 5px;
+  margin: 5px 0;
   border-radius: 4px;
   background-color: #000;
   width: 35px;
