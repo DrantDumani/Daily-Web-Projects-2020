@@ -8,14 +8,20 @@
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
+	<input type="checkbox" id="toggle">
+	<div id="doc-page">
   <input type="checkbox" id="menu">
   <nav>
+  	<div class="mobile-menu">
 	    <label id="hamburger-group" for="menu">
 	      <span class="hamburger-menu"></span>
 	      <span class="hamburger-menu"></span>
 	      <span class="hamburger-menu"></span>
 	    </label>
-		<header id="doc-topic">Lua on the Moon</header>
+	    <label id="light-toggle" for="toggle"></label>
+	    <header id="doc-topic">Lua on the Moon</header>
+	</div>
+		<!-- <header id="doc-topic">Lua on the Moon</header> -->
 		<ul id="nav-menu">
 			<li><a href="#">Introduction</a></li>
 			<li><a href="#">Hello World</a></li>
@@ -63,5 +69,6 @@
 			<code>Lua goes here</code>
 		</section>
 	</main>
+	</div>
 </body>
 </html>

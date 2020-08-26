@@ -1,23 +1,61 @@
-body {
+html, body {
+  height: 100%;
   margin: 0;
-  background-color: yellow;
 }
 
-[type="checkbox"]:checked ~ nav #nav-menu {
+body {
+  font-size: 1.4em;
+  overflow: hidden;
+}
+
+[type="checkbox"] {
+  display: none;
+}
+
+.mobile-menu {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 60%;
+  border-bottom: 3px solid red;
+}
+
+.mobile-menu > * {
+  margin: 8px;
+}
+
+#menu:checked ~ nav #nav-menu {
   left: 0;
 }
 
-[type="checkbox"]:checked ~ #main-doc, 
-[type="checkbox"]:checked ~ nav header {
+#menu:checked ~ #main-doc, 
+#menu:checked ~ nav header {
   left: 41vw;
 }
 
+#toggle:checked ~ #doc-page {
+  background-color: #000;
+  color: #fff;
+}
+
+#toggle:checked ~ #doc-page > nav > .mobile-menu > #light-toggle
+{
+  background-color: #fff;
+  margin-top: 8px;
+}
+
+#doc-page {
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
 #doc-topic {
-	margin-top: 20px;
+	display: none;
 }
 
 #nav-menu {
-  background-color: cyan;
+  /*background-color: cyan;*/
   position: absolute;
   padding: 0;
   width: 40vw;
@@ -26,36 +64,51 @@ body {
   border-right: 3px solid black;
 }
 
-#main-doc, header {
-  width: 100vw;
+#main-doc {
+  /*margin-top: 55px;*/
+  /*padding-left: 13px;*/
+  width: 100%;
   position: relative;
 }
 
 #hamburger-group {
-	position: absolute;
+	/*position: absolute;*/
 	top: 15px;
 	left: 8px;
 	cursor: pointer;
+}
+
+#light-toggle {
+  margin-top: -5px;
+  border-radius: 50%;
+  /*background-color: red;*/
+  width: 30px;
+  height: 30px;
+  box-shadow: 5px 5px 0 0 #000;
 }
 
 .hamburger-menu {
   display: block;
   margin: 5px;
   border-radius: 4px;
-  background-color: #04c4d4;
+  background-color: #000;
   width: 35px;
   height: 5px;
   transition: transform 0.3s ease-out, opacity 0.5s ease-out;
 }
 
-[type="checkbox"]:checked ~ nav #hamburger-group > .hamburger-menu:nth-child(1) {
+#toggle:checked ~ #doc-page > nav > .mobile-menu > #hamburger-group > .hamburger-menu {
+  background-color: #fff;
+}
+
+#menu:checked ~ nav #hamburger-group > .hamburger-menu:nth-child(1) {
   transform: rotate(45deg) translate(2px, 12px);
 }
 
-[type="checkbox"]:checked ~ nav #hamburger-group > .hamburger-menu:nth-child(2) {
+#menu:checked ~ nav #hamburger-group > .hamburger-menu:nth-child(2) {
   opacity: 0;
 }
 
-[type="checkbox"]:checked ~ nav #hamburger-group > .hamburger-menu:nth-child(3) {
+#menu:checked ~ nav #hamburger-group > .hamburger-menu:nth-child(3) {
   transform: rotate(-45deg) translate(2px, -12px);
 }
