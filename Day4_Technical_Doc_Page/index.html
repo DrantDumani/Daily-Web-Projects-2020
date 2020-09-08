@@ -4,71 +4,97 @@
 	<title>Lua Documentation Page</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<!--Insert font here-->
+	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap" rel="stylesheet"> 
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<input type="checkbox" id="toggle">
-	<div id="doc-page">
-  <input type="checkbox" id="menu">
-  <nav>
-  	<div class="mobile-menu">
-	    <label id="hamburger-group" for="menu">
-	      <span class="hamburger-menu"></span>
-	      <span class="hamburger-menu"></span>
-	      <span class="hamburger-menu"></span>
-	    </label>
-	    <label id="light-toggle" for="toggle"></label>
-	    <header id="doc-topic">Lua on the Moon</header>
-	</div>
-		<!-- <header id="doc-topic">Lua on the Moon</header> -->
-		<ul id="nav-menu">
-			<li><a href="#" class="nav-link">Introduction</a></li>
-			<li><a href="#" class="nav-link">Hello World</a></li>
-			<li><a href="#" class="nav-link">Variables</a></li>
-			<li><a href="#" class="nav-link">Functions</a></li>
-			<li><a href="#" class="nav-link">Tables</a></li>
+	<nav id="navbar">
+		<input type="checkbox" id="menu-toggle">
+		<div class="header-flex">
+		    <label id="hamburger-group" for="menu-toggle">
+		      <span class="hamburger-icon"></span>
+		      <span class="hamburger-icon"></span>
+		      <span class="hamburger-icon"></span>
+		    </label>
+		    <header class="doc-topic">Lua Documentation</header>
+		    <button id="light-toggle" type="button">Dark mode</button>
+	    </div>
+		<ul class="nav-menu">
+			<a href="#Introduction" class="nav-link"><li>Introduction</li></a>
+			<a href="#Hello_World" class="nav-link"><li>Hello World</li></a>
+			<a href="#" class="nav-link"><li>Variables and Variable Assignment</li></a>
+			<a href="#" class="nav-link"><li>Option</li></a>
+			<a href="#" class="nav-link"><li>Option</li></a>
+			<a href="#" class="nav-link"><li>Option</li></a>
+			<a href="#" class="nav-link"><li>Option</li></a>
+			<a href="#" class="nav-link"><li>Option</li></a>
+			<a href="#" class="nav-link"><li>Option</li></a>
+			<a href="#" class="nav-link"><li>Option</li></a>
+			<a href="#" class="nav-link"><li>Option</li></a>
+			<a href="#" class="nav-link"><li>Option</li></a>
+			<a href="#" class="nav-link"><li>Option</li></a>
+			<a href="#" class="nav-link"><li>Option</li></a>
+			<a href="#" class="nav-link"><li>Option</li></a>
+			<a href="#" class="nav-link"><li>Option</li></a>
+			<a href="#" class="nav-link"><li>Option</li></a>
+			<a href="#" class="nav-link"><li>Option</li></a>
+			<a href="#" class="nav-link"><li>Option</li></a>
+			<a href="#" class="nav-link"><li>Last Cave</li></a>
 		</ul>
 	</nav>
 	<main id="main-doc">
-		<section class="main-section" id="">
-			<header>Lua</header>
-			<p></p>
-			<p></p>
-			<code>Lua goes here</code>
+		<header class="doc-topic"><h1>Lua Documentation</h1></header>
+		<section class="main-section" id="Introduction">
+			<header><h2>Introduction</h2></header>
+			<p>Lua is a portable, lightweight scripting language that was developed back during 1993. Being a small and simple language, lua offers simple, but powerful features. It's used as a component language, for its C API, its numerous libraries (as a result of its dynamic typing). Lua can also act as a glue language that can change the behavior of the components it binds together.</p>
+			<p>Lua has been used as the leading language in several commercial games (including World of Warcraft), Adobe Lightroom, and many industrial applications. It is also free to use for any purpose. Lua's advantages can be summed up as follows:</p>
 			<ul>
-				<li>Math</li>
-				<li>Math</li>
-				<li>Math</li>
-				<li>Math</li>
-				<li>Math</li>
+				<li><span>Lua is fast and portable.</span></li>
+				<li><span>Lua is small and embeddable.</span></li>
+				<li><span>Lua is both powerful and simple to use.</span></li>
 			</ul>
 		</section>
-		<section class="main-section" id="">
-			<header>THE</header>
+		<section class="main-section" id="Hello_World">
+			<header><h2>Hello World</h2></header>
+			<p>In line with typical programming conventions, we'll run a simple "Hello World" program</p>
+			<pre class="prettyprint"><code class="language-lua">print("Hello World");</code></pre>
+		</section>
+		<section class="main-section" id="Variables">
+			<header><h2>Variables</h2></header>
+			<p>Variables are names that you assign values to. This is done in order to retrieve or call the value whenever you need. Lua follows the naming conventions for variables that many other programming languages do: Variables can start with underscores and letters, but they cannot have leading numbers. Variables also may not share the same name as special characters or reserved words in the lua language.</p>
+			<p>Declaring variables in lua is quite simple. You simply type the identifier, followed by a space, and equal sign which assigns the name to its value, and then the value itself. See the example below.</p>
+			<pre class="prettyprint"><code class="language-lua">planet = "Saturn"
+number = 4
+local x,y,z = 3, 2, 1</code></pre>
+			<p>The last line not only shows how multiple variable assignment is performed, it also uses the keyword "local". This is important when talking about scope, which we will cover in the next section.</p>
+			<p>Finally, variables can be assigned to any valid type as a value. You can even assign them to expressions. You don't need to assign any value to a variable upon declaring it. When this happens, Lua will treat said variable as nil.
+			<pre class="prettyprint lang-lua"><code>sum = 400 + 300
+print(sum) --returns 700
+local n
+print(n) --returns nil</code></pre>
+		</section>
+		<section class="main-section" id="Scope">
+			<header><h2>Scope</h2></header>
+			<p>When you declare a global variable in lua, it can be seen and accessed by all of its surrounding blocks, functions, and tables. This behavior can potentially lead to confusion, namespace pollution, and unintended errors. When working with several variables, it's best to declare them with the local keyword in order to lock them to their current chunk or block.</p>
+			<p></p>
+			<code>Lua goes here</code>
+		</section>
+		<section class="main-section" id="Functions">
+			<header><h2>Functions</h2></header>
 			<p></p>
 			<p></p>
 			<code>Lua goes here</code>
 		</section>
-		<section class="main-section" id="">
-			<header>THE</header>
-			<p></p>
-			<p></p>
-			<code>Lua goes here</code>
-		</section>
-		<section class="main-section" id="">
-			<header>THE</header>
-			<p></p>
-			<p></p>
-			<code>Lua goes here</code>
-		</section>
-		<section class="main-section" id="">
-			<header>THE</header>
+		<section class="main-section" id="Functions">
+			<header><h2>Functions the 2nd</h2></header>
 			<p></p>
 			<p></p>
 			<code>Lua goes here</code>
 		</section>
 	</main>
-	</div>
+	<script src="script.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
 </body>
 </html>
