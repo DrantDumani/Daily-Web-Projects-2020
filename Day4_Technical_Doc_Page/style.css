@@ -102,8 +102,7 @@ h2 {
 }
 
 .nav-link > li {
-  margin: 0.8em 0;
-  padding-right: 0.2em;
+  margin: 0.80em 0;
 }
 
 .nav-link:last-child > li {

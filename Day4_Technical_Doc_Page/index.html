@@ -24,24 +24,13 @@
 		<ul class="nav-menu">
 			<a href="#Introduction" class="nav-link"><li>Introduction</li></a>
 			<a href="#Hello_World" class="nav-link"><li>Hello World</li></a>
-			<a href="#" class="nav-link"><li>Variables and Variable Assignment</li></a>
-			<a href="#" class="nav-link"><li>Option</li></a>
-			<a href="#" class="nav-link"><li>Option</li></a>
-			<a href="#" class="nav-link"><li>Option</li></a>
-			<a href="#" class="nav-link"><li>Option</li></a>
-			<a href="#" class="nav-link"><li>Option</li></a>
-			<a href="#" class="nav-link"><li>Option</li></a>
-			<a href="#" class="nav-link"><li>Option</li></a>
-			<a href="#" class="nav-link"><li>Option</li></a>
-			<a href="#" class="nav-link"><li>Option</li></a>
-			<a href="#" class="nav-link"><li>Option</li></a>
-			<a href="#" class="nav-link"><li>Option</li></a>
-			<a href="#" class="nav-link"><li>Option</li></a>
-			<a href="#" class="nav-link"><li>Option</li></a>
-			<a href="#" class="nav-link"><li>Option</li></a>
-			<a href="#" class="nav-link"><li>Option</li></a>
-			<a href="#" class="nav-link"><li>Option</li></a>
-			<a href="#" class="nav-link"><li>Last Cave</li></a>
+			<a href="#Variables_and_Variable_Assignment" class="nav-link"><li>Variables and Variable Assignment</li></a>
+			<a href="#Scope" class="nav-link"><li>Scope</li></a>
+			<a href="#Functions" class="nav-link"><li>Functions</li></a>
+			<a href="#Tables" class="nav-link"><li>Tables</li></a>
+			<a href="#Flow_Control" class="nav-link"><li>Flow Control</li></a>
+			<a href="#Lexical_Scoping_and_Closures" class="nav-link"><li>Lexical Scoping and Closures</li></a>
+      <a href="#References" class="nav-link"><li>References</li></a>
 		</ul>
 	</nav>
 	<main id="main-doc">
@@ -61,8 +50,8 @@
 			<p>In line with typical programming conventions, we'll run a simple "Hello World" program</p>
 			<pre class="prettyprint"><code class="language-lua">print("Hello World");</code></pre>
 		</section>
-		<section class="main-section" id="Variables">
-			<header><h2>Variables</h2></header>
+		<section class="main-section" id="Variables_and_Variable_Assignment">
+			<header><h2>Variables and Variabe Assignment</h2></header>
 			<p>Variables are names that you assign values to. This is done in order to retrieve or call the value whenever you need. Lua follows the naming conventions for variables that many other programming languages do: Variables can start with underscores and letters, but they cannot have leading numbers. Variables also may not share the same name as special characters or reserved words in the lua language.</p>
 			<p>Declaring variables in lua is quite simple. You simply type the identifier, followed by a space, and equal sign which assigns the name to its value, and then the value itself. See the example below.</p>
 			<pre class="prettyprint"><code class="language-lua">planet = "Saturn"
@@ -70,7 +59,7 @@ number = 4
 local x,y,z = 3, 2, 1</code></pre>
 			<p>The last line not only shows how multiple variable assignment is performed, it also uses the keyword "local". This is important when talking about scope, which we will cover in the next section.</p>
 			<p>Finally, variables can be assigned to any valid type as a value. You can even assign them to expressions. You don't need to assign any value to a variable upon declaring it. When this happens, Lua will treat said variable as nil.
-			<pre class="prettyprint lang-lua"><code>sum = 400 + 300
+			<pre class="prettyprint"><code class="language-lua">sum = 400 + 300
 print(sum) --returns 700
 local n
 print(n) --returns nil</code></pre>
@@ -78,21 +67,124 @@ print(n) --returns nil</code></pre>
 		<section class="main-section" id="Scope">
 			<header><h2>Scope</h2></header>
 			<p>When you declare a global variable in lua, it can be seen and accessed by all of its surrounding blocks, functions, and tables. This behavior can potentially lead to confusion, namespace pollution, and unintended errors. When working with several variables, it's best to declare them with the local keyword in order to lock them to their current chunk or block.</p>
-			<p></p>
-			<code>Lua goes here</code>
+			<p>The following example depicts how scope works in lua. Note the values of the variable"n".</p>
+      <pre class="prettyprint"><code class="language-lua">n = 4
+print(n) --returns 4
+do --this starts a new block
+    local n = 8
+    print(n) --returns 8, value of n local to this block
+    n = n * 2
+    print(n) --returns 16
+end --terminates the block, pushing the variable that was local to it out of scope.
+print(n) --returns 4, global n</code></pre>
 		</section>
 		<section class="main-section" id="Functions">
 			<header><h2>Functions</h2></header>
-			<p></p>
-			<p></p>
-			<code>Lua goes here</code>
+			<p>Functions are re-usable pieces of code that act as the main method for abstracting expressions and statements. Think of them as machines that perform complex actions with the push of a button, even though we don't see all of the steps the machine takes to get there.</p>
+			<p>The example below shows a function's syntax, as well as how it's called and what it does.</p>
+      <pre class="prettyprint"><code class="language-lua">add = function(num)
+    return num + 10;
+end
+x = 14;
+print(add(x)) --returns 24</code></pre>
+      <p>Functions are called by typing the function name followed by a pair of parenthesis. A function's parameters are listed between the parenthesis if any exist. The end keyword terminates the function and, if no values were returned, the function will return nothing.</p>
+      <p>It is important to note that functions ar first class values and are subject to the benefits of Lua's many types. They can be table properties, assigned to variables, and can even be passed as parameters to other functions. Functions in Lua can also return multiple values, and with the "..." syntax passed as a parameter, they can take any number of arguments.</p>
 		</section>
-		<section class="main-section" id="Functions">
-			<header><h2>Functions the 2nd</h2></header>
-			<p></p>
-			<p></p>
-			<code>Lua goes here</code>
+		<section class="main-section" id="Tables">
+			<header><h2>Tables</h2></header>
+			<p>Tables are Lua's one and only data structure. Neither arrays nor objects exist as types in this language, but tables are capable of simulating both. They work kind of like associative arrays where keys can be assigned values, or values can just be indexed.</p>
+      <pre class="prettyprint"><code class="language-lua">local tbl = {} --an empty table
+local colors = {"red", "pink", "green", "blue"} --a table with indexed values
+local heroes = {Superman = "Clark Kent", Batman = "Bruce Wayne", 
+                Spiderman = "Peter Parker", Ms_Marvel = "Kamala Khan"}
+
+print(colors[1]) --returns "red"
+print(heroes.Ms_Marvel) --returns "Kamala Khan"
+print(heroes["Ms_Marvel"]) --returns "Kamala Khan"
+
+local alt = "Ms_Marvel"
+
+print(heroes[alt]) --also returns "Kamala Khan"
+print(heroes[Ms_Marvel]) --returns nil
+</code></pre>
+      <p>The above example also shows how to access a table's contents. It also shows how the dot notation is simply syntactic sugar for the bracket notation. Note the use of the alt variable in brackets without quotes. When a word is placed between the brackets without quotes, lua will treat it as a variable and "expand" its meaning first.</p>
 		</section>
+    <section class="main-section" id="Flow_Control">
+      <header><h2>Flow Control</h2></header>
+      <p>Lua offers the following constructs for flow control</p>
+      <ul>
+        <li>if then...else</li>
+        <li>while</li>
+        <li>repeat</li>
+        <li>Numerical for and Generic for</li>
+      </ul>
+      <p>Example of if then...else: </p>
+      <pre class="prettyprint"><code class="language-lua">if condition then
+   --code
+elseif condition then
+   --code
+end</code></pre>
+      <p>Example of while loop: </p>
+      <pre class="prettyprint"><code class="language-lua">while condition do
+   --code
+end</code></pre>
+      <p>Example of repeat: </p>
+      <pre class="prettyprint"><code class="language-lua">repeat --code until condition</code></pre>
+      <p>Example of for loops. Generic for can be used to iterate over tables.</p>
+      <pre class="prettyprint"><code class="language-lua">--Numeric for
+for exp1, exp2, exp3 do
+   --code
+end
+
+--Generic for
+for key, value in ipairs(tbl) do
+   --code
+end</code></pre>
+    </section>
+    <section class="main-section" id="Lexical_Scoping_and_Closures">
+      <header><h2>Lexical Scoping and Closures</h2></header>
+      <p>Lexical Scoping refers to how functions are able to access all local variables and parameters within their enclosing functions. Observe the following behavior.</p>
+      <pre class="prettyprint"><code class="language-lua">function big(a,b)
+  return function()
+    return (a+b)*2
+  end
+end
+
+medium = big(4,5)
+print(medium()) --returns 18</code></pre>
+      <p>For local variables, enclosed functions will "remember" them even when they've fallen out of scope. This is how a closure operates. It recalls and is able to access the instance of said local variable even when the variable's scope has already passed.</p>
+      <pre class="prettyprint"><code class="language-lua">function count()
+   local count = 0
+   return function()
+      count = count + 1
+      return count
+   end
+end
+
+c1 = count()
+print(c1()) --returns 1
+print(c1()) --returns 2
+print(c1()) --returns 3</code></pre>
+    </section>
+    <section class="main-section" id="Types">
+      <header><h2>Types</h2></header>
+      <p>The following are all types in Lua</p>
+      <ul>
+        <li>String</li>
+        <li>Number</li>
+        <li>Table</li>
+        <li>Userdata</li>
+        <li>Boolean</li>
+        <li>Function</li>
+        <li>nil</li>
+      </ul>
+    </section>
+    <section class="main-section" id="References">
+      <header><h2>Reference</h2></header>
+      <ul>
+        <li><p>You can view the <a href="https://www.lua.org/manual/5.3/" target="_blank">Lua reference manual </a>here by following the link</p></li>
+        <li><p>The 1st edition of <a href="https://www.lua.org/pil/" target="_blank">Programming in Lua</a> is available for free.</p></li>
+    </section>
 	</main>
 	<script src="script.js"></script>
 	<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
