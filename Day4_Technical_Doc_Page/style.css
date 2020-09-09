@@ -95,17 +95,18 @@ h2 {
 .nav-link {
   text-decoration: none;
   color: inherit;
+  display: block;
 }
 
 .nav-link:hover {
   text-decoration: underline;
 }
 
-.nav-link > li {
-  margin: 0.80em 0;
+.nav-menu > li {
+  margin: 1em 0;
 }
 
-.nav-link:last-child > li {
+.nav-menu > li:last-child {
   margin-bottom: 25vmin;
 }
 
