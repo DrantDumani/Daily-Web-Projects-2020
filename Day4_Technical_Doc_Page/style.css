@@ -77,7 +77,7 @@ h2 {
   background-color: inherit;
   border-right: 1.5px solid #01000c;
   width: 65%;
-  height: 90vh;
+  height: 100vh;
   margin-top: 0;
   padding: 8px 0 0px 9%;
   font-weight: bold;
@@ -160,7 +160,6 @@ code {
   .nav-menu {
     position: static;
     width: auto;
-    height: 100vh;
     margin: 0;
   }
 
