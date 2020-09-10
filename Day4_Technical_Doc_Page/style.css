@@ -141,6 +141,10 @@ code {
   overflow-x: auto;
 }
 
+.ref-link {
+  color: #1f8071;
+}
+
 @media (min-width: 1200px) {
   body {
     display: flex;
