@@ -7,6 +7,7 @@ let old_bg, old_color, old_btext;
 let toggle = document.getElementById("light-toggle");
 let iconMap = document.body.querySelectorAll("span.hamburger-icon");
 let nav = document.body.querySelector("nav");
+let head_flex = document.body.querySelector(".header-flex")
 let nav_menu = document.body.querySelector("ul.nav-menu");
 let theme = document.body.style;
 
@@ -22,6 +23,7 @@ toggle.onclick = function(){
 		theme.backgroundColor = bg_color;
 		theme.color = color;
 		nav.style.borderColor = color;
+		head_flex.style.borderColor = color;
 		nav_menu.style.borderColor = color;
     	iconMap.forEach((_, i, arr) => arr[i].style.backgroundColor = color);
     	light_theme = false;
@@ -34,6 +36,7 @@ toggle.onclick = function(){
 		theme.backgroundColor = old_color;
 		theme.color = old_color;
 		nav.style.borderColor = old_color;
+		head_flex.style.borderColor = old_color;
 		nav_menu.style.borderColor = old_color;
 		iconMap.forEach((_, i, arr) => arr[i].style.backgroundColor = old_color);
 		light_theme = true;

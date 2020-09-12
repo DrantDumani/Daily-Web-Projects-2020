@@ -21,7 +21,8 @@ body {
 .header-flex {
   display: flex;
   justify-content: space-between;
-  margin: 15px;
+  padding: 15px;
+  border-right: 1.5px solid #01000c;
 }
 
 header {
@@ -112,6 +113,7 @@ h2 {
 
 #main-doc {
   padding: 65px 4.5% 65px 4.5%;
+  scroll-behavior: smooth;
 }
 
 .main-section {
@@ -158,7 +160,6 @@ code {
 
   #navbar {
     position: static;
-    border-right: 1.5px solid #01000c;
   }
 
   .nav-menu {
