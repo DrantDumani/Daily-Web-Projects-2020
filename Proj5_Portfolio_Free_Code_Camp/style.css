@@ -1,0 +1,123 @@
+body {
+	margin: 0 auto;
+	font-family: 'Playfair Display', serif;
+	background-color: #03202e;
+	color: #fff;
+}
+
+#navbar {
+	display: flex;
+	flex-direction: column;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 65px;
+	background-color: #03202e;
+	/*overflow: hidden;*/
+}
+
+#collapse-nav {
+	position: absolute;
+	/*top: 65px;*/
+	flex-shrink: 0;
+	order: 2;
+	/*display: none;*/
+	opacity: 0;
+	width: 100vw;
+	height: 0;
+	/*height: 100vh;*/
+	background-color: #03202e;
+	transition: all 0.45s ease-in;
+	z-index: 10;
+	overflow: hidden;
+}
+
+#collapse-nav:target {
+	/*display: block;*/
+	height: 100vh;
+	opacity: 1;
+}
+
+#nav-menu {
+	margin-top: 100px;
+	padding: 0;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	list-style-type: none;
+}
+
+#nav-menu > * {
+	padding: 15px 0;
+}
+
+.nav-link {
+	color: #fff;
+	font-size: 5em;
+}
+
+.hamburger-group {
+	position: absolute;
+	top: 15px;
+	left: 15px;
+	order: 1;
+	/*background-color: #000;*/
+	z-index: 1;
+}
+
+.hamgrp-two > .hamburger-icon:nth-child(1) {
+	transform: rotate(45deg) translate(2px, 12px);
+}
+
+.hamgrp-two > .hamburger-icon:nth-child(2) {
+	opacity: 0;
+}
+
+.hamgrp-two > .hamburger-icon:nth-child(3) {
+	transform: rotate(-45deg) translate(2px, -12px);
+}
+
+.hamburger-icon {
+  display: block;
+  margin: 5px;
+  border-radius: 4px;
+  background-color: #fff;
+  width: 35px;
+  height: 5px;
+  transition: 0.3s;
+}
+
+#welcome-section {
+	padding-top: 7em;
+	/*background-color: #000;*/
+	min-height: 100vh;
+	width: 100%;
+}
+
+#dev-pic {
+	display: block;
+	margin: auto;
+	border-radius: 50%;
+	border: 2px solid #fff;
+	max-width: 65%;
+	height: auto;
+}
+
+#about-me {
+	padding: 0 0.4em;
+	font-size: 3em;
+	line-height: 1.2em;
+
+}
+
+#projects {
+	height: 100vh;
+}
+
+@media (min-width: 1200px) {
+	#welcome-section {
+		
+	}
+
+}
